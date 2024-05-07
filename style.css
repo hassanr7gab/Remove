@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+nav{
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 5;
+    transition: all 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  nav.sticky{
+    background:  #fa0051;
+    padding: 13px 0;
+  }
+  nav .navbar{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+  nav .navbar .logo a{
+    font-weight: 500;
+    font-size: 35px;
+    color: #4472f1;
+   
+  }
+  nav.sticky .navbar .logo a{
+    color: #3369fc;
+  }
+  .navbar .logo span{
+    color:#fa0051;
+  }
+  nav.sticky .navbar .logo span{
+    color: #3369fc;
+  }
+  nav .navbar .menu{
+    display: flex;
+    position: relative;
+  }
+  nav .navbar .menu li{
+    list-style: none;
+    margin: 0 10px;
+    
+  }
+  .navbar .menu a{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    padding: 6px 0;
+    transition: all 0.4s ease;
+  }
+  .navbar .menu a:hover{
+    color:  #fa0051;
+  }
+  nav.sticky .menu a{
+    color: #FFF;
+  }
+  nav.sticky .menu a:hover{
+    color:   #3369fc;
+  }
+
+/*  *********************************************************************************                   */
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1506268452458-bfb3757ed859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 400px;
+    background: rgba(255,255,255,.2);
+    box-shadow: 0 5px 15px #065cdbc9;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow:10 10 #3369fc;
+}
+.card h1{
+    font-weight: 500;
+    color: #3369fc;
+}
+.card img{
+    width: 180px;
+    height: 180px;
+    border-radius: 5%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+label{
+    outline: none;
+    display: block;
+    font-size: 18px;
+    width: 200px;
+    background:  #e3362c;
+    color: #fff;
+    padding: 12px;
+    margin: 10px auto;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+label:hover{
+    border-color: #4070f4;
+    background-color: #fff;
+    color: #fa0051;
+    letter-spacing: 1.5px;
+    transform: scale(1.2);
+}
+input{
+    display: none;
+}
+
+.btn{
+    border: 1px solid #0295f7;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;   
+    transition: 0.8s;
+    overflow: hidden;
+    position: relative;
+}
+.btn1, .btn2{
+    color: #0295f7;
+    position: relative;
+    z-index: 4;
+}
+
+.btn1:hover, .btn2:hover{
+    color: #fff;
+    letter-spacing: 1px;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #0295f7;
+    z-index: -1;
+    transition: 0.8s;  
+}
+
+.btn1::before{
+    top: 0;
+    border-radius: 0 0 50% 50%;
+}
+.btn2::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+.btn1:hover::before, .btn2:hover::before{
+    height:180%;
+}
+.landing-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #212121;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader{
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    animation: smokeOut 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 1px white;
+  }
+  .loader:before {
+    content: "Z e r o";
+  }
+
+  @keyframes smokeOut {
+    100% {
+      opacity: 0.08;
+      filter: blur(5px);
+      letter-spacing: 4px;
+    }
+  }
+
+
+
+@media (max-width: 750px) {
+  nav .navbar{
+    width: 90%;
+  }
+  nav .navbar .menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: black;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu{
+    left: 0;
+  }
+  nav .navbar .menu a{
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover{
+    color: #fa0051;
+  }
+
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    display: block;
+  }
+}
